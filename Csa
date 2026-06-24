@@ -1,0 +1,160 @@
+• Units Consumed 
+Methods:
+1. Read consumer details. 
+2. Calculate electricity bill. 
+3. Display bill amount. 
+4. Validate connection type. 
+Assume:
+• Domestic: ₹5 per unit 
+• Commercial: ₹8 per unit
+
+
+import java.util.Scanner;
+
+public class ElectricityConsumer {
+    // Data Members
+    private String consumerNumber;
+    private String consumerName;
+    private String typeOfConnection; // Domestic or Commercial
+    private int unitsConsumed;
+
+    // Method 1: Read consumer details
+    public void readConsumerDetails() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Enter Consumer Details ---");
+        System.out.print("Enter Consumer Number: ");
+        this.consumerNumber = scanner.nextLine();
+        System.out.print("Enter Consumer Name: ");
+        this.consumerName = scanner.nextLine();
+        
+        // Loop input until validation rule passes
+        while (true) {
+            System.out.print("Enter Connection Type (Domestic/Commercial): ");
+            this.typeOfConnection = scanner.nextLine();
+            if (validateConnectionType()) {
+                break;
+            }
+            System.out.println("[Error] Invalid type. Please enter exactly 'Domestic' or 'Commercial'.");
+        }
+        
+        System.out.print("Enter Units Consumed: ");
+        this.unitsConsumed = scanner.nextInt();
+    }
+
+    // Method 4: Validate connection type
+    public boolean validateConnectionType() {
+        return "Domestic".equalsIgnoreCase(typeOfConnection) || "Commercial".equalsIgnoreCase(typeOfConnection);
+    }
+/ Method 2: Calculate electricity bill
+    public double calculateElectricityBill() {
+        if ("Domestic".equalsIgnoreCase(typeOfConnection)) {
+            return unitsConsumed * 5; // Domestic: 5 per unit
+        } else if ("Commercial".equalsIgnoreCase(typeOfConnection)) {
+            return unitsConsumed * 8; // Commercial: 8 per unit
+        }
+        return 0;
+    }
+
+    // Method 3: Display bill amount
+    public void displayBillAmount() {
+        double totalBill = calculateElectricityBill();
+        System.out.println("\n--- Electricity Statement ---");
+        System.out.println("Consumer Number: " + consumerNumber);
+        System.out.println("Consumer Name: " + consumerName);
+        System.out.println("Connection Type: " + typeOfConnection);
+        System.out.println("Units Consumed: " + unitsConsumed);
+        System.out.println("----------------------------");
+        System.out.println("Total Bill Amount: " + totalBill + " units currency");
+    }
+
+    public static void main(String[] args) {
+        ElectricityConsumer consumer = new ElectricityConsumer();
+        consumer.readConsumerDetails();
+        consumer.displayBillAmount();
+
+    }
+}
+
+5. Mobile Recharge System
+Design a Java class to represent a mobile subscriber.
+Data Members:
+• Mobile Number 
+• Subscriber Name 
+• Service Provider 
+• Account Balance 
+Methods:
+1. Read subscriber details. 
+2. Recharge account balance. 
+3. Deduct balance for a call/data usage. 
+4. Display updated balance. 
+Assume: Initial balance = ₹500.
+
+import java.util.Scanner;
+
+public class MobileSubscriber {
+    // Data Members
+    private String mobileNumber;
+    private String subscriberName;
+    private String serviceProvider;
+    private double accountBalance;
+
+    // Constructor initializing initial balance
+    public MobileSubscriber() {
+        this.accountBalance = 500.0; // Assume: Initial balance = 500
+    }
+
+    // Method 1: Read subscriber details
+    public void readSubscriberDetails() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Enter Subscriber Details ---");
+        System.out.print("Enter Mobile Number: ");
+        this.mobileNumber = scanner.nextLine();
+        System.out.print("Enter Subscriber Name: ");
+        this.subscriberName = scanner.nextLine();
+        System.out.print("Enter Service Provider: ");
+        this.serviceProvider = scanner.nextLine();
+    }
+
+    // Method 2: Recharge account balance
+    public void rechargeAccount(double amount) {
+        if (amount > 0) {
+            accountBalance += amount;
+            System.out.println("\n[Success] Recharge successful. Added: " + amount);
+        } else {
+            System.out.println("\n[Error] Invalid recharge amount.");
+        }
+    }
+
+    // Method 3: Deduct balance for a call/data usage
+    public void deductBalance(double usageCost) {
+        if (usageCost <= accountBalance) {
+            accountBalance -= usageCost;
+            System.out.println("\n[Usage] Deducted " + usageCost + " units for network usage.");
+        } else {
+            System.out.println("\n[Alert] Transaction failed! Insufficient balance for activity usage cost.");
+        }
+    }
+
+    // Method 4: Display updated balance
+    public void displayUpdatedBalance() {
+        System.out.println("\n--- Account Balance Information ---");
+        System.out.println("Subscriber: " + subscriberName + " (" + mobileNumber + ")");
+        System.out.println("Network Provider: " + serviceProvider);
+        System.out.println("Current Available Balance: " + accountBalance);
+    }
+
+    public static void main(String[] args) {
+        MobileSubscriber subscriber = new MobileSubscriber();
+        subscriber.readSubscriberDetails();
+        
+        subscriber.displayUpdatedBalance();
+        subscriber.deductBalance(45.50); // Simulating an outgoing call
+        subscriber.rechargeAccount(100.00); // Top up balance
+        subscriber.displayUpdatedBalance();
+
+    }
+}
+
+
+
+
