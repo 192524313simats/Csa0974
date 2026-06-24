@@ -1,0 +1,235 @@
+LEVEL 2
+
+[1] QID: 47
+ Question : Write a program to read a character until a * is encountered. Also count the numb
+ er of uppercase, lowercase, and numbers entered by the users.
+ Sample Input:
+ Enter * to exit 
+ Enter any character: W
+ Enter any character: d
+ Enter any character: A
+ Enter any character: G
+ Enter any character: g
+ Enter any character: H
+ Enter any character: *
+ Sample Output:
+ Total count of lower case:2
+ Total count of upper case:4
+ Total count of numbers =0
+ 
+ Testcases: 1. 1,7,6,9,5
+ 2. S, Q, l, K,7, j, M
+ 3. M, j, L, &, @, G
+ 4. D, K, I, 6, L, *
+ 5. *, K, A, e, 1, 8, %, *
+ Program : import java.io.*;
+ import java.util.*;
+ class Count
+ {
+ public static void main(String args[])
+ {
+ String str1;
+ character ch=character to LowerCase(str1.charAt[i]);
+ for(i=0;i=’A’&&ch>=’B’)
+ {
+ countuppercase++;
+
+ }
+Submitted Answers Report
+ else{
+ numbers++;
+ }
+ System.out.print("character"+character);
+ }
+ }
+ }
+ Input : (no input)
+ Output : Error: Count.java:8: error: ’;’ expected
+ character ch=character to LowerCase(str1.charAt[i]);
+ ^
+ Count.java:8: error: ’;’ expected
+ character ch=character to LowerCase(str1.charAt[i]);
+ ^
+ Count.java:8: error: not a statement
+ character ch=character to LowerCase(str1.charAt[i]);
+ ^
+ Count.java:8: error: ’;’ expected
+ character ch=character to LowerCase(str1.charAt[i]);
+ ^
+ 4 errors
+ First Save: 2026-06-23 15:25:45
+ Last Save : 2026-06-23 16:23:19
+ ----------------------------------------------------------------------------------------
+ [2] QID: 41
+ Question : In an organization they decide to give bonus to all the employees on New Year. A 
+ 5% bonus on salary is given to the grade A workers and 10% bonus on salary to the
+ grade B workers. Write a program to enter the salary and grade of the employee. 
+ If the salary of the employee is less than $10,000 then the employee gets an extr
+ a 2% bonus on salary Calculate the bonus that has to be given to the employee and
+ print the salary that the employee will get.
+ Sample Input & Output:
+ Enter the grade of the employee: B
+ Enter the employee salary: 50000
+ Salary=50000
+ Bonus=5000.0
+ Total to be paid:55000.0
+ 
+ Testcases: 1. Enter the grade of the employee: A
+ Enter the employee salary: 8000
+ 2. Enter the grade of the employee: C
+ Enter the employee salary: 60000
+ 3. Enter the grade of the employee: B
+ Enter the employee salary: 0
+ 4. Enter the grade of the employee: 38000
+ Enter the employee salary: A
+ Program : import java.io.*;
+ import java.util.*;
+ class Employee
+ {
+ public static void main(String args[])
+ {
+ int n=2;
+ for(int i=1;i
+ Input : 5
+Submitted Answers Report
+ Output : the grade is A
+ 
+ First Save: 2026-06-23 14:49:49
+ Last Save : 2026-06-23 15:52:40
+ ----------------------------------------------------------------------------------------
+ [3] QID: 37
+ Question : Find the Mth maximum number and Nth minimum number in an array and then find the 
+ sum of it and difference of it.
+ Sample Input:
+ Array of elements = {14, 16, 87, 36, 25, 89, 34}
+ M = 1
+ N = 3
+ Sample Output:
+ 1stMaximum Number = 89
+ 3rdMinimum Number = 25
+ Sum = 114
+ Difference = 64
+ 
+ Testcases:
+ 1. {16, 16, 16 16, 16}, M = 0, N = 1
+ 2. {0, 0, 0, 0}, M = 1, N = 2
+ 3. {-12, -78, -35, -42, -85}, M = 3 , N = 3
+ 4. {15, 19, 34, 56, 12}, M = 6 , N = 3
+ 5. {85, 45, 65, 75, 95}, M = 5 , N = 7
+ Program : import java.io.*;
+ import java.util.*;
+ class Main
+ {
+ public static void main(String args[])
+ {
+ int a[]={14,16,87,36,25,89,34};
+ int largest=arr[0];
+ for (int i=1;ilargest)
+ { largest=arr[i];
+ System.out.println=(a)} }
+ Input : (no input)
+ Output : Error: No Java class definition found in submitted code
+DEBUGGING 
+1] QID: 6
+ Question : . A program is written to reverse a string. Verify whether the logic is correct a
+ nd modify it if necessary.
+ public class Q5_Reverse {
+ public static void main(String[] args) {
+ String str = "Hello";
+ String rev = "";
+ 
+ for(int i = 0; i < str.length(); i++){
+ rev = str.charAt(i) + rev;
+ }
+ System.out.println(rev);
+ }
+ }
+ 
+ Program : public class Q5
+ {
+ public static void main(String[]args)
+ {
+ String str="Hello";
+ String rev="";
+ 
+ for(int i=0;1
+ Input : (no input)
+ Output : Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String inde
+ x out of range: 5
+ at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+ at java.base/java.lang.String.charAt(String.java:1515)
+ at Q5.main(Q5.java:10)
+ First Save: 2026-06-23 13:40:32
+ Last Save : 2026-06-23 13:55:25
+ ----------------------------------------------------------------------------------------
+ [2] QID: 23
+ Question : A method is intended to return the sum of two numbers but fails to compile. Ident
+ ify and correct the issue.
+ public class Q23_Method {
+ public static int sum(int a, int b){
+ return a + b;
+ }
+ public static void main(String[] args) {
+Submitted Answers Report
+ System.out.println(sum(5,3));
+ }
+ }
+ 
+ Program : public class Q23_Method
+ {
+ public static int sum(int a,int b)
+ {
+ return a+b;
+ }
+ public static void main(String[]args)
+ {
+ System.out.println(sum(5,3));
+ }
+ }
+ Input : (no input)
+ Output : 8
+ 
+ First Save: 2026-06-23 13:36:00
+ Last Save : 2026-06-23 13:45:21
+ ----------------------------------------------------------------------------------------
+ [3] QID: 15
+ Question : A string is split using an incorrect delimiter, resulting in unexpected output. I
+ dentify the issue and correct the split operation.
+ public class Q15_Split {
+ public static void main(String[] args) {
+ String str = "Java,Python,C++";
+ String arr[] = str.split(",");
+ System.out.println(arr.length);
+ }
+ }
+ 
+ Program : public class Q15_split
+ {
+ public static void main(String[]args)
+ {
+ String str ="Java,Python,C++";
+ String arr[]=str.split(",");
+ System.out.print(arr.length);
+ }
+ }
+ Input : (no input)
+ Output : 3
+ First Save: 2026-06-23 13:32:21
+ Last Save : 2026-06-23 13:45:12
+ ----------------------------------------------------------------------------------------
+ [4] QID: 12
+ Question : A loop skips the first element of an array while printing values. Identify the er
+ ror in the loop and correct it.
+ public class Q12_LoopFix {
+ public static void main(String[] args) {
+Submitted Answers Report
+ int arr[] = {1,2,3};
+ for(int i=0; i
+ Program : public class Q12_LoopFix
+ {
+ public static void main(String[]args)
+ {
+ int arr[]={1,2,3};
+ for(int i=0;i
+ Input : (no input)
+ Output : 1
